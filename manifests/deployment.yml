@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: willsimage 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: willsimage
+  template:
+    metadata:
+      labels:
+        app: willsimage 
+    spec:
+      containers:
+        - name: willsimage 
+          image: willscontainerregistry.azurecr.io/willsimage
+          ports:
+          - containerPort: 8080
